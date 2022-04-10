@@ -10,7 +10,7 @@ public class Quick {
         System.out.println(Arrays.toString(scores));
     }
 
-    public static void quickSort(int[] scores, int start, int end) {
+    public static void quickSort(int[] array, int start, int end) {
         if (start >= end) {
             return;
         }
@@ -19,21 +19,21 @@ public class Quick {
         int rPointer = end;
 
         int midIdx = (start + end) / 2;
-        int midVal = scores[midIdx];
+        int midVal = array[midIdx];
 
-        scores[midIdx] = scores[rPointer];
-        scores[rPointer] = midVal;
+        array[midIdx] = array[rPointer];
+        array[rPointer] = midVal;
 
         rPointer--;
 
         while (lPointer <= rPointer) {
-            boolean isTargetToSwapL = scores[lPointer] >= midVal;
-            boolean isTargetToSwapR = scores[rPointer] <= midVal;
+            boolean isTargetToSwapL = array[lPointer] >= midVal;
+            boolean isTargetToSwapR = array[rPointer] <= midVal;
 
             if (isTargetToSwapL && isTargetToSwapR) {
-                int tmp = scores[lPointer];
-                scores[lPointer] = scores[rPointer];
-                scores[rPointer] = tmp;
+                int tmp = array[lPointer];
+                array[lPointer] = array[rPointer];
+                array[rPointer] = tmp;
 
                 lPointer++;
                 rPointer--;
@@ -43,10 +43,10 @@ public class Quick {
             }
         }
 
-        scores[end] = scores[lPointer];
-        scores[lPointer] = midVal;
+        array[end] = array[lPointer];
+        array[lPointer] = midVal;
 
-        quickSort(scores, start, lPointer - 1);
-        quickSort(scores, lPointer + 1, end);
+        quickSort(array, start, lPointer - 1);
+        quickSort(array, lPointer + 1, end);
     }
 }
