@@ -1,9 +1,9 @@
-package main.quizzes.marathon;
+package main.quizzes;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Solution {
+public class Marathon {
 
     class BadRequestException extends RuntimeException{}
 
@@ -30,7 +30,6 @@ public class Solution {
 
             compleMap.put(name, compleMap.get(name) - 1);
         }
-
 
         return answer;
     }
