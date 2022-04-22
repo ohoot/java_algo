@@ -9,9 +9,12 @@ import java.util.stream.IntStream;
 public class CommonTest {
     @Test
     public void test() {
-        int[] test = {1, 2, 3 ,4, 5};
+        String test = "00 0000 1100 0110 1101 1110 0000 0001";
 
-        System.out.println(Arrays.toString(Arrays.copyOfRange(test, 1, 5)));
+
+        int i = 9843471;
+
+        System.out.println(test.charAt(0) == '0');
 
     }
 }
