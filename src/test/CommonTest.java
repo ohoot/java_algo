@@ -4,17 +4,24 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class CommonTest {
     @Test
     public void test() {
-        String test = "00 0000 1100 0110 1101 1110 0000 0001";
+        int[] A = {-3, 1, 2, -2, 5, 6};
 
+        Map<Integer, Integer> map = new HashMap<>(A.length);
 
-        int i = 9843471;
+        for (int i = 0; i < A.length; i++) {
+            map.put(A[i], i);
+        }
 
-        System.out.println(test.charAt(0) == '0');
+        Integer[] boxed = Arrays.stream(A).boxed().toArray(Integer[]::new);
+
+        Arrays.sort(boxed, Collections.reverseOrder());
+
+        System.out.println(map);
+        System.out.println(map.get(A[0]));
 
     }
 }
